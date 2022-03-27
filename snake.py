@@ -59,14 +59,14 @@ class Snake:
             if (DM/2)-abs(self.temp_turtle.position()[0]) < 10 or (DM/2)-abs(self.temp_turtle.position()[1]) < 10:
                 self.crash = True
                 self.scoreboard.writeText(
-                    f'GAME OVER.\nYou collided with the wall.\nYour score was {self.scoreboard.score}.\nPress "r" to restart or "q" to quit game')
+                    f'GAME OVER.\nYou collided with the wall.\nYour score was {self.scoreboard.score}. Your high score is {self.scoreboard.high_score}.\nPress "r" to restart or "q" to quit game')
                 return True
             for n in range(len(self.body)):
                 current_turtle: Turtle = self.body[n]
                 if(current_turtle.distance(self.temp_turtle) == 0):
                     self.crash = True
                     self.scoreboard.writeText(
-                        f'GAME OVER.\nYou collided with your body.\nYour score was {self.scoreboard.score}.\nPress "r" to restart or "q" to quit game')
+                        f'GAME OVER.\nYou collided with your body.\nYour score was {self.scoreboard.score}. Your high score is {self.scoreboard.high_score}.\nPress "r" to restart or "q" to quit game')
                     return True
 
         if(not not_on_food):
